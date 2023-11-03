@@ -1,0 +1,14 @@
+uuid: 478b9095-29e4-479a-8866-6ac3cfd208da
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: default_paths
+label: 'Default paths'
+type: 'canonical_entities:node'
+pattern: '[node:content-type]/[node:title]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

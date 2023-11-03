@@ -1,0 +1,11 @@
+name: d10-starter
+recipe: drupal10
+config:
+  php: '8.2'
+  via: nginx
+  webroot: web
+  xdebug: false
+
+services:
+  database:
+    portforward: 3306

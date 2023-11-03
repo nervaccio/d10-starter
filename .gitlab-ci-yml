@@ -1,0 +1,31 @@
+stages:
+  - build
+
+image: devwithlando/php:8.0-apache-3
+
+variables:
+  MYSQL_DATABASE: drupal
+  MYSQL_ROOT_PASSWORD: drupal
+
+build:
+  stage: build
+  allow_failure: false
+  services:
+    - mysql:5.7
+  script:
+    - echo "CREATE DATABASE IF NOT EXISTS \`drupal\`;" | mysql --user=root --password="$MYSQL_ROOT_PASSWORD" --host=mysql
+    - echo "CREATE USER 'drupal'@'%' IDENTIFIED BY 'drupal';" | mysql --user=root --password="$MYSQL_ROOT_PASSWORD" --host=mysql
+    - echo "GRANT ALL ON drupal.* TO 'drupal'@'%';" | mysql --user=root --password="$MYSQL_ROOT_PASSWORD" --host=mysql
+    - echo "FLUSH PRIVILEGES;" | mysql --user=root --password="$MYSQL_ROOT_PASSWORD" --host=mysql
+    - apt-get update
+    - apt-get install -y ca-certificates curl gnupg libxss1
+    - mkdir -p /etc/apt/keyrings
+    - curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+    # NODE_MAJOR=20
+    - echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list
+    - apt-get update
+    - apt-get install nodejs -y
+    - composer validate --no-check-all --ansi
+    - composer install
+    - composer site-install
+    - composer site-update
