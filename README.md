@@ -15,6 +15,14 @@ Drupal 10 starter for new projects, attentions this is an opinionated starter.
 lando drush site:install --db-url=mysql://drupal10:drupal10@database/drupal10 -y
 ```
 
+### Fix permission
+```bash
+$ cd /var/www/example.org/public_html/web
+$ chown -R johndoe:www-data .
+$ find . -type d -exec chmod u=rwx,g=rx,o= '{}' \;
+$ find . -type f -exec chmod u=rw,g=r,o= '{}' \;
+```
+
 ## VSCode configurations
 Based on Drupal.org's guide [Configuring Visual Studio Code](https://www.drupal.org/docs/develop/development-tools/editors-and-ides/configuring-visual-studio-code)
 ### Extensions
