@@ -34,9 +34,9 @@
 
   /* PHP Intelephense (bmewburn.vscode-intelephense-client) */
   "intelephense.environment.includePaths": [
-    "core/",
-    "core/includes",
-    "../vendor/"
+    "/web/core/",
+    "/web/core/includes",
+    "/vendor/"
   ],
 
   /* Empty Indent */
