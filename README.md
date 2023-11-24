@@ -3,8 +3,8 @@ Drupal 10 starter for new projects, attentions this is an opinionated starter.
 
 ## TODOs
 
-[ ] Check defaults modules  
-[ ]  
+- [ ] Check defaults modules  
+- [ ] ... 
 
 ## What defaults do/active
 * Disable users registrations
