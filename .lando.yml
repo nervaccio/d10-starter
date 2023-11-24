@@ -4,7 +4,7 @@ config:
   php: '8.2'
   via: nginx
   webroot: web
-  xdebug: false
+  xdebug: true
 
 services:
   database:
