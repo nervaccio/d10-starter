@@ -26,22 +26,23 @@
     "*.info": "ini"
   },
   "files.trimTrailingWhitespace": true,
+    "[markdown]": {
+    "files.trimTrailingWhitespace": false
+  },
   "files.restoreUndoStack": false,
   "files.insertFinalNewline": true,
   "html.format.enable": true,
   "html.format.wrapLineLength": 80,
   "telemetry.telemetryLevel": "off",
 
-  /* PHP Intelephense (bmewburn.vscode-intelephense-client) */
   "intelephense.environment.includePaths": [
-    "/web/core/",
-    "/web/core/includes",
-    "/vendor/"
+    "core/",
+    "core/includes",
+    "../vendor/"
   ],
 
-  /* Empty Indent */
   "emptyIndent.removeIndent": true,
   "emptyIndent.highlightIndent": false,
   "emptyIndent.highlightColor": "rgba(246,36,89,0.6)",
-  "emptyIndent.exclude": [".md"]
+  "emptyIndent.exclude": [".md"],
 }
