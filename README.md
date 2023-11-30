@@ -1,6 +1,9 @@
 # d10-starter
 Drupal 10 starter for new projects, attentions this is an opinionated starter.
 
+## Handbook D9/D10
+[https://selwynpolit.github.io/d9book/](https://selwynpolit.github.io/d9book/)
+
 ## TODOs
 
 - [ ] Check defaults modules  
