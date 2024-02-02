@@ -1,4 +1,4 @@
-# d10-starter
+# D10-starter
 Drupal 10 starter for new projects, attentions this is an opinionated starter.
 
 ## Handbook D9/D10
@@ -33,3 +33,17 @@ Based on Drupal.org's guide [Configuring Visual Studio Code](https://www.drupal.
 * [PHP DocBlocker: Provides auto-complete for PHP docblocks.](https://marketplace.visualstudio.com/items?itemName=neilbrayfield.php-docblocker)
 * [Empty Indent: Removes indent of empty lines on save.](https://marketplace.visualstudio.com/items?itemName=DmitryDorofeev.empty-indent)
 * [PHP Debug: Provides launch configuration support for XDebug. Requires XDebug.](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)
+
+## Drupal - enable/disable Twig debug
+```bash
+# Enable Twig debug mode in Drupal 10
+lando drush twig:debug on && \
+lando drush state:set disable_rendered_output_cache_bins 1 --input-format=integer  && \
+lando drush cache:rebuild
+
+# Disable Twig debug mode in Drupal 10
+drush twig:debug off && \
+drush state:set disable_rendered_output_cache_bins 0 --input-format=integer && \
+drush cache:rebuild
+
+```
