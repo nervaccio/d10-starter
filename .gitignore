@@ -63,3 +63,5 @@
 /drupal
 
 /web/modules/contrib/*
+
+/web/themes/*/node_modules
